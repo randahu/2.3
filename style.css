@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #000;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* مو اكبر من ١٢٠٠*/
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates responsive grid */
+    gap: 20px; /* المساحة بين البطاقة و البوكس  */
+    padding: 20px;
+}
+
+.album-card {
+    background: linear-gradient(to right, #3f0232, #0f0e0e);
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    padding: 15px;
+    height: fit-content;
+    transition: transform 0.2s ease-in-out;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.album-header {
+    padding: 8px 0;
+}
+
+.album-title {
+    font-size: 20px; /* حجم العنوان */
+    font-weight: bold; /* نوع الكتابة  */
+    margin-bottom: 10px; /*حجم بين البوكس  */
+}
+
+.artist-name, .genre-year {
+    font-size: 14px;
+    color: #b3b3b3;             
+    margin-bottom: 3px;
+}
+
+.track-list-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.track-list-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.track-list {
+    padding: 10px 0;
+    display: none;
+    margin-top: 10px;
+}
+
+.track-list.show {
+    display: block;
+}
+
+.track-item {
+    display: flex; 
+    align-items: center;
+    padding: 4px 0;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.track-number {
+    width: 25px;
+    text-align: right;
+    margin-right: 8px;
+}
+
+.track-title {
+    flex: 1;
+}
+
+.track-duration {
+    margin-left: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 25px;
+    }
+    
+    .album-card {
+        padding: 12px;
+    }
+    
+    .album-title {
+        font-size: 18px;
+    }
+}
